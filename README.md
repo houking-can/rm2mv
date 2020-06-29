@@ -24,6 +24,11 @@ cleartrash()
     read -p "Clear sure?[n/y]" confirm
     [ $confirm == 'y' ] || [ $confirm == 'Y' ]  && /bin/rm -rf $TRASH/*
 }
+qrm()
+{
+    read  "confirm?Clean sure[n/y]"
+    [ $confirm = 'y' ] || [ $confirm = 'Y' ]  && /bin/rm -rf $@
+}
 ```
 
 
@@ -50,6 +55,11 @@ cleartrash()
 {
     read  "confirm?Clean sure[n/y]"
     [ $confirm = 'y' ] || [ $confirm = 'Y' ]  && /bin/rm -rf $TRASH/*
+}
+qrm()
+{
+    read  "confirm?Clean sure[n/y]"
+    [ $confirm = 'y' ] || [ $confirm = 'Y' ]  && /bin/rm -rf $@
 }
 ```
 
