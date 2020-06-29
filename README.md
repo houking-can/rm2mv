@@ -3,6 +3,7 @@ Replace linux command rm with mv for bash and zsh
 
 ### Bash
 
+```
 export TRASH=/data/rubbish/
 alias rm=trash
 alias rl='ls $TRASH'
@@ -20,12 +21,16 @@ trash()
 }
 cleartrash()
 {
-    **read -p "Clear sure?[n/y]" confirm**
+    read -p "Clear sure?[n/y]" confirm
     [ $confirm == 'y' ] || [ $confirm == 'Y' ]  && /bin/rm -rf $TRASH/*
 }
+```
+
+
 
 ### Zsh
 
+```
 export TRASH=/data/rubbish/
 alias rm=trash
 alias rl='ls $TRASH'
@@ -43,6 +48,11 @@ trash()
 }
 cleartrash()
 {
-    **read  "confirm?Clean sure[n/y] "**
+    read  "confirm?Clean sure[n/y]"
     [ $confirm = 'y' ] || [ $confirm = 'Y' ]  && /bin/rm -rf $TRASH/*
 }
+```
+
+### Note
+
+The main difference is in the function **cleartrash** as  there are some difference of **read** command between bash and zsh
